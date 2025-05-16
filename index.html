@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guessing Game</title>
+    <link rel="shortcut icon" href="./icon.ico" type="image/x-icon" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        user-select: none;
+      }
+
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: #f0f0f0;
+        padding: 2rem;
+        text-align: center;
+        position: relative;
+      }
+
+      header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        justify-content: flex-end;
+        background: transparent;
+      }
+
+      header button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        border: none;
+        border-radius: 8px;
+        background-color: #00ffc3;
+        color: #092635;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      header button:hover {
+        background-color: #00c2a0;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+        color: #00ffc3;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+      }
+
+      input[type="text"] {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        border-radius: 10px;
+        border: 2px solid #00ffc3;
+        outline: none;
+        margin-bottom: 1rem;
+        width: 250px;
+        background-color: #1b2a38;
+        color: #f0f0f0;
+      }
+
+      button#checkBtn {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 10px;
+        background-color: #00ffc3;
+        color: #092635;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button#checkBtn:hover {
+        background-color: #00c2a0;
+      }
+
+      /* Modal styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.6);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background-color: #1b2a38;
+        padding: 2rem;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 400px;
+        color: #f0f0f0;
+        position: relative;
+        box-shadow: 0 0 15px rgba(0, 255, 195, 0.4);
+      }
+
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 1.5rem;
+        color: #00ffc3;
+        cursor: pointer;
+      }
+
+      @media (max-width: 500px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        input[type="text"],
+        button#checkBtn {
+          width: 80%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <button id="aboutBtn">About</button>
+    </header>
+
+    <h1>
+      Guess Number <br />
+      0 to 100
+    </h1>
+    <input type="text" id="userInput" placeholder="Enter your choice..." />
+    <button id="checkBtn">Check</button>
+
+    <!-- Modal -->
+    <div id="aboutModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>About Developer & Game</h2>
+        <p>
+          This is a simple number guessing game built with HTML, CSS, and
+          JavaScript.
+        </p>
+        <p>
+          Developed by <strong>Engr. Mohsin</strong>. Try to guess the number
+          between 0 and 100!
+        </p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
